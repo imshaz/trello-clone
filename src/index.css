@@ -2,10 +2,10 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*, *::before, *::after, #root {
   box-sizing: inherit;
 }
 
-html, body, root {
+html, body, #root {
   height: 100%;
 }

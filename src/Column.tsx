@@ -10,6 +10,7 @@ interface ColumnProps {
 function Column({ text, index }: ColumnProps) {
   const {
     state: { lists },
+    dispatch,
   } = useAppState();
   return (
     <ColumnContainer>
@@ -20,7 +21,12 @@ function Column({ text, index }: ColumnProps) {
 
       <AddNewItem
         toggleButtonText="+ Add task"
-        onAdd={console.log}
+        onAdd={(text) => {
+          dispatch({
+            type: "ADD_TASK",
+            payload: { taskId: lists[index].id, text: text },
+          });
+        }}
         dark={true}
       />
     </ColumnContainer>
