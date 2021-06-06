@@ -1,25 +1,19 @@
 import React from "react";
 import AddNewItem from "./AddNewItem";
 import "./App.css";
-import Card from "./Card";
 import Column from "./Column";
 import { AppContainer } from "./styles";
+import { useAppState } from "./AppStateContext";
+
 function App() {
+  const { state } = useAppState();
   return (
     <AppContainer>
-      <Column text="Anim in duis ">
-        <Card text="Nisi minim nisi anim voluptate ut elit ut eiusmod adipisicing excepteur incididunt."></Card>
-      </Column>
+      {state?.lists?.map((list, i) => (
+        <Column text={list?.text} key={list?.id} index={i} />
+      ))}
 
-      <Column text="Anim in duis ">
-        <Card text="Nisi minim nisi anim voluptate ut elit ut eiusmod adipisicing excepteur incididunt."></Card>
-      </Column>
-
-      <Column text="Anim in duis ">
-        <Card text="Nisi minim nisi anim voluptate ut elit ut eiusmod adipisicing excepteur incididunt."></Card>
-      </Column>
-
-      <AddNewItem onAdd={()=>console.log}  toggleButtonText="+ Add new List"/>
+      <AddNewItem onAdd={() => console.log} toggleButtonText="+ Add new List" />
     </AppContainer>
   );
 }
