@@ -27,7 +27,7 @@ function Column({ text, index }: ColumnProps) {
             payload: { taskId: lists[index].id, text: text },
           });
         }}
-        dark={true}
+        dark
       />
     </ColumnContainer>
   );

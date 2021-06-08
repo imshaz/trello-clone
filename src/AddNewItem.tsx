@@ -14,7 +14,7 @@ function AddNewItem(props: AddNewItemProps) {
     return (
       <NewItemForm
         onAdd={(text) => {
-          onAdd(text);
+          text.length && onAdd(text);
           setShowForm(false);
         }}
       />
