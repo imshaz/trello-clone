@@ -3,6 +3,7 @@ import AddNewItem from "./AddNewItem";
 import { ColumnContainer, ColumnTitle } from "./styles";
 import { useAppState } from "./AppStateContext";
 import Card from "./Card";
+
 interface ColumnProps {
   text: string;
   index: number;
